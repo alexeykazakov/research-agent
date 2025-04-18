@@ -1,0 +1,3 @@
+<!-- Use this file to provide workspace-specific custom instructions to Copilot. For more details, visit https://code.visualstudio.com/docs/copilot/copilot-customization#_use-a-githubcopilotinstructionsmd-file -->
+
+This is a full-stack AI research agent app. The backend is Python (FastAPI) and the frontend is React (Vite + TypeScript). The backend exposes endpoints for model list and prompt aggregation. The frontend is a chat UI for research using multiple LLMs. Use best practices for async API calls, error handling, and user experience.
