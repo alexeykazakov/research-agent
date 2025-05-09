@@ -9,6 +9,7 @@ A full-stack AI research agent app for deep research using multiple LLMs, with a
 - **Rich Chat UI:** React + Vite frontend with Markdown rendering, copy-to-clipboard, and responsive design.
 - **Async Python Backend:** FastAPI backend with async API calls, error handling, and CORS support.
 - **Secure API Key Management:** API keys are stored in a separate, git-ignored file for security.
+- **Web Search Integration:** Instructs LLMs to use the provided Brave web search MCP server when a web search for current events is needed.
 
 ## Project Structure
 ```
