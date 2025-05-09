@@ -4,3 +4,9 @@ httpx
 google-generativeai
 pydantic
 pytest
+mcp-use
+fastembed
+langchain-openai
+langchain-xai
+dotenv
+langchain-google-genai

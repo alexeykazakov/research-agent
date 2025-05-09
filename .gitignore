@@ -23,6 +23,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Exclude sensitive API keys from version control
-backend/api_keys.py
-backend-venv/
 backend/__pycache__
+backend/.env
+
+.venv/

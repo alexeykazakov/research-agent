@@ -15,7 +15,7 @@ function App() {
   const [leadingModel, setLeadingModel] = useState<string>("");
   const [prompt, setPrompt] = useState("");
   const [think, setThink] = useState(true);
-  const [research, setResearch] = useState(false);
+  const [web_search, setWebSearch] = useState(true);
   const [loading, setLoading] = useState(false);
   const [modelResults, setModelResults] = useState<Record<string, string>>({});
   const [summary, setSummary] = useState<string>("");
@@ -72,7 +72,7 @@ function App() {
         prompt,
         leading_model: leadingModel,
         think: String(think),
-        research: String(research),
+        web_search: String(web_search),
       });
       selectedModels.forEach((m) => params.append("models", m));
       const eventSource = new EventSource(`${API_URL}/prompt/stream?${params.toString()}`);
@@ -207,10 +207,10 @@ function App() {
           <label>
             <input
               type="checkbox"
-              checked={research}
-              onChange={() => setResearch((v) => !v)}
+              checked={web_search}
+              onChange={() => setWebSearch((v) => !v)}
             />
-            Research
+            Web Search
           </label>
         </div>
         <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>

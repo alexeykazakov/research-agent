@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@modelcontextprotocol/server-brave-search": "^0.6.2",
     "react-markdown": "^10.1.0"
   },
   "devDependencies": {

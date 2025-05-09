@@ -33,9 +33,9 @@ research-agent/
 ### 1. Backend (Python/FastAPI)
 ```bash
 cd backend
-python3 -m venv ../backend-venv
-source ../backend-venv/bin/activate
-pip install -r requirements.txt
+uv venv
+source .venv/bin/activate
+uv pip install -r requirements.txt
 # Copy api_keys.py.example to api_keys.py and add your API keys
 uvicorn main:app --reload
 ```
