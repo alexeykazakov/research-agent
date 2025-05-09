@@ -15,7 +15,7 @@ A full-stack AI research agent app for deep research using multiple LLMs, with a
 research-agent/
 ├── backend/              # FastAPI backend
 │   ├── main.py           # Main API logic
-│   ├── api_keys.py       # API keys (excluded from git)
+│   ├── .env              # API keys (excluded from git)
 │   ├── requirements.txt  # Python dependencies
 │   └── README.md         # Backend usage
 ├── frontend/             # React + Vite + TypeScript frontend
@@ -24,7 +24,7 @@ research-agent/
 │   ├── research.png      # App icon
 │   └── README.md         # Frontend usage
 ├── Makefile              # Start/stop/restart both backend and frontend
-├── .gitignore            # Excludes venv, node_modules, api_keys.py, etc.
+├── .gitignore            # Excludes venv, node_modules, .env, etc.
 └── README.md             # (This file)
 ```
 
@@ -36,8 +36,8 @@ cd backend
 uv venv
 source .venv/bin/activate
 uv pip install -r requirements.txt
-# Copy api_keys.py.example to api_keys.py and add your API keys
-uvicorn main:app --reload
+# Create .env and add your API keys
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ### 2. Frontend (React/Vite)
@@ -56,8 +56,16 @@ make start
 - The frontend runs on [http://localhost:5173](http://localhost:5173)
 
 ## API Keys
-- All API keys are stored in `backend/api_keys.py` (excluded from git).
+- All API keys are stored in `backend/.env` (excluded from git).
 - You must provide your own keys for OpenAI, Gemini, Grok, etc.
+
+### Example `.env` file
+```env
+OPENAI_API_KEY=your-openai-key-here
+GEMINI_API_KEY=your-gemini-key-here
+GROK_API_KEY=your-grok-key-here
+BRAVE_SEARCH_API_KEY=your-brave-search-key-here
+```
 
 ## Testing
 
@@ -78,12 +86,12 @@ npm test
 - Frontend tests use @testing-library/react and Jest for UI/component testing.
 
 ## Security & Best Practices
-- **Never commit your API keys** (`api_keys.py` is git-ignored).
-- The Python virtual environment (`backend-venv/`) and frontend `node_modules/` are also git-ignored.
+- **Never commit your API keys** (`backend/.env` is git-ignored).
+- The Python virtual environment (`venv/`) and frontend `node_modules/` are also git-ignored.
 - Use best practices for async API calls, error handling, and user experience (see `.github/copilot-instructions.md`).
 
 ## License
-This project is for research and educational purposes. Please review the licenses of any LLM APIs you use.
+This project is licensed under the Apache License 2.0. See the LICENSE file for details.
 
 ---
 

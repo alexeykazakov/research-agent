@@ -13,12 +13,12 @@ This is the FastAPI backend for the Deep Research Agent app.
 
 1. Create and activate the Python virtual environment (if not already):
    ```bash
-   python3 -m venv backend-venv
-   source backend-venv/bin/activate
+   uv venv
+   source .venv/bin/activate
    ```
 2. Install dependencies:
    ```bash
-   pip install fastapi uvicorn httpx pydantic
+   uv pip install -r requirements.txt
    ```
 3. Run the backend server:
    ```bash
@@ -29,10 +29,6 @@ This is the FastAPI backend for the Deep Research Agent app.
 ## Endpoints
 - `GET /models` — List available models
 - `POST /prompt` — Submit a prompt and get aggregated results
-
-## Notes
-- Dummy API keys are used for LLMs. Replace them in `main.py` with your real keys.
-- The backend is designed for local development and demo purposes.
 
 ---
 
